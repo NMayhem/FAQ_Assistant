@@ -1,0 +1,31 @@
+{
+  "CONFIG": {
+    "welcome": "Hola! Soy Edi, tu asistente virtual, ¿Cómo puedo ayudarte hoy?",
+    "invalid": "Lo lamento, mis respuestas son limitadas, debes hacer las preguntas correctas."
+  },
+  "KNOWLEDGE": [
+    { "q": "¿Qué es Edi?", "a": "Soy un asistente virtual básico creado para ayudarte a consultar tus dudas sobre tus proyectos y la editorial." },
+    { "q": "¿Eres una IA?", "a": "No exactamente, soy un asistente como lo fue en su momento el legendario Clippy," },
+    { "q": "¿Cuál es la misión de Edi?", "a": "Fui creado con el único propósito de apoyar a todos los miembros de esta empresa, tanto para los veteranos como a los que vengan después." },
+    { "q": "¿Lo sabes todo?", "a": "Aun no, fui creado y cargado con instrucciones y soluciones básicas, pero la idea es que con el tiempo me sean agregadas más instrucciones para poder ayudar en cosas más específicas de tu proyecto." },
+    { "q": "¿Cual es la misión de Editec?", "a": "Ofrecer servicios y soluciones integrales para la industria editorial, desde el concepto y la creación de contenidos hasta la generación del producto final." },
+    { "q": "¿Cual es la vision de Editec?", "a": "Ser la mejor opción para las editoriales, gracias a nuestra calidad superior, conocimiento del idioma español, estructura, compromiso, experiencia y capacidad de adaptación a las necesidades de un mercado en constante cambio." },
+    { "q": "¿Qué tipo de proyectos trabajamos?", "a": "En editec hay diversas áreas, diseño, formación, multimedia, accesibilidad y web, cada uno con su respectivo proyecto." },
+    { "q": "¿Qué significa _ps1 en el pdf?", "a": "Los archivos que trabajamos aquí se hacen por rondas de revisiones, ps hace referencia a pass 1, lo que significa que es la primera ronda, cada que se hace una corrección se modifica el número, ps1, ps2, etc." },
+    { "q": "Que significa SE y TE", "a": "Generalmente trabajamos dos versiones de los libros que hacemos, SE significa Student Edition, que es la versión que se le entrega a los estudiantes, y TE significa Teacher Edition que es la versión que contiene las respuestas a los ejercicios" },
+    { "q": "¿Qué significa ANNOs?", "a": "Puede que la primera vez que lo oíste o viste sonara gracioso, pero es abreviación de ANNOTATION, ese término se emplea para referirse a las respuestas que vienen en las versiones TE." },
+    { "q": "¿Qué significa _acc en el pdf?", "a": "Es abreviación de Accesible, son un tipo de archivos especiales orientados a la versión digital, estos archivos son pdfs orientados al apoyo de personas con discapacidad visual, ya que estos pueden ser leídos por un lector de pantalla que describe a detalle el contenido del documento." },
+    { "q": "¿Qué significa _GM en el pdf?", "a": "Es la abreviación de Gold Master, es la versión final final de los archivos PDF, normalmente estos son los que ya se mandan a imprimir." },
+    { "q": "¿Qué es un Alt Text?", "a": "Es el término en inglés para referirse al Texto Alternativo, este es una descripción que se le coloca a las imágenes, normalmente se ocupa en los documentos que tienen salida digital o de accesibilidad." },
+    { "q": "¿Qué es el Mathtools/Mathtype?", "a": "Es una herramienta que se ocupa para la construcción de fórmulas matemáticas en un documento, esto debido a que las fórmulas no se crean ni se leen como el texto general." },
+    { "q": "¿Qué es un Overmatter/OM?", "a": "Se refiere a un texto desbordado en tu página, a veces los clientes colocan texto que no cabe en su totalidad en la maqueta, cuando esto ocurre se marca un OM y se solicita una edición en los textos para que puedan caber correctamente." },
+    { "q": "¿Qué significa artifactear?", "a": "Es una configuración que se le coloca a algunos elementos de tu documento, esto con el objetivo de que al momento de generar tu PDF, el archivo no reconozca dicho elemento como parte del contenido activo en el documento." },
+    { "q": "¿Qué es anclar?", "a": "El término es un tanto literal, anclar se refiere a que uno de los elementos de tu documento, ya sea un texto, imagen, etc, va a estar vinculado a otro que consideraremos como principal" },
+    { "q": "¿Cuál es la diferencia entre anclaje libre e in-line?", "a": "Anclaje libre se refiere a que el elemento que anclaste lo vas a poder mover libremente sobre tu documento, mientras que in-line el elemento está colocado dentro de la línea de párrafo y solo podras ajustar la altura de su posición" },
+    { "q": "¿Cuál es el texto condicional?", "a": "Es una configuración que se aplica al texto de tu documento que nos permite ocultar o mostrar versiones diferentes del mismo documento sin tener que crear otro, el uso más común es para crear las versiones SE y TE" },
+    { "q": "¿Cómo se aplica el texto condicional?", "a": "Solo puede aplicarse a lo que el programa considera carácter, el texto vivo es el ejemplo más claro, para aplicarse a un elemento como una imagen, tabla o un gráfico este debe ser anclado y aplicarse el condicional sobre el anclaje." },
+    { "q": "Tengo un error en mi pdf", "a": "Que se quemó o que falló?" },
+    { "q": "No se lee una imagen en el documento", "a": "Esto puede deberse a múltiples razones, comprueba que la imagen contenga Alt text, que no esté artifacteada, suelen ser los errores más comunes, otras soluciones no tan comunes es agregar un espacio antes de la imagen para que se detecte el párrafo, o que esté mal anclada." },
+    { "q": "No se lee una línea de párrafo.", "a": "Pueden ser varias cosas, intenta utilizando cajas de texto individuales para lo que no se está leyendo, sino comprueba que la caja donde esté contenida no esté artifacteda, o en algunos casos raros, intenta cambiando el estilo de párrafo o quitando los overrides." }
+  ]
+}
