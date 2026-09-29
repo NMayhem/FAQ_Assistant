@@ -9,20 +9,23 @@ on:
 
 jobs:
   build:
-    name: Build ${{ matrix.platform }}
+    name: Build ${{ matrix.name }}
     runs-on: ${{ matrix.platform }}
 
     strategy:
       fail-fast: false
       matrix:
         include:
-          - platform: windows-latest
+          - name: Windows
+            platform: windows-latest
             args: ""
 
-          - platform: macos-latest
+          - name: macOS Apple Silicon
+            platform: macos-latest
             args: "--target aarch64-apple-darwin"
 
-          - platform: macos-latest
+          - name: macOS Intel
+            platform: macos-latest
             args: "--target x86_64-apple-darwin"
 
     permissions:
@@ -30,10 +33,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
@@ -41,7 +44,7 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+          targets: ${{ matrix.args == '--target aarch64-apple-darwin' && 'aarch64-apple-darwin' || matrix.args == '--target x86_64-apple-darwin' && 'x86_64-apple-darwin' || '' }}
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
@@ -52,7 +55,7 @@ jobs:
         run: npm ci
 
       - name: Build Tauri application
-        uses: tauri-apps/tauri-action@v1
+        uses: tauri-apps/tauri-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -62,3 +65,21 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+
+      - name: Upload Windows artifacts
+        if: matrix.name == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: edi-windows
+          path: |
+            src-tauri/target/release/bundle/msi/*
+            src-tauri/target/release/bundle/nsis/*
+
+      - name: Upload macOS artifacts
+        if: startsWith(matrix.name, 'macOS')
+        uses: actions/upload-artifact@v4
+        with:
+          name: edi-${{ matrix.name }}
+          path: |
+            src-tauri/target/**/release/bundle/dmg/*
+            src-tauri/target/**/release/bundle/macos/*
