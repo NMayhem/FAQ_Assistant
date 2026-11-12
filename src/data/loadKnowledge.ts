@@ -93,13 +93,13 @@ export async function loadKnowledge(): Promise<Knowledge> {
     questions: parsed.KNOWLEDGE.length,
   });
 
-  /*const configPath = await join(
+  const configPath = await join(
     await appConfigDir(),
     DIRECTORY,
     "knowledge.json"
   );
 
-  console.log("EDI knowledge file:", configPath);*/
+  console.log("EDI knowledge file:", configPath);
 
   return parsed;
 }
