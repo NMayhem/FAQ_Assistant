@@ -14,11 +14,12 @@
     "windows": [
       {
         "title": "Edi",
-        "width": 360,
-        "height": 360,
+        "width": 500,
+        "height": 500,
         "decorations": false,
         "transparent": true,
-        "resizable": false
+        "resizable": false,
+        "devtools": true
       }
     ],
     "security": {

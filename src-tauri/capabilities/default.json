@@ -1,3 +1,4 @@
+
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
@@ -7,6 +8,40 @@
     "core:default",
     "core:window:allow-start-dragging",
     "core:window:allow-set-size",
-    "opener:default"
+    "core:window:allow-set-position",
+    "opener:default",
+    "fs:default",
+    {
+      "identifier": "fs:allow-mkdir",
+      "allow": [
+        {
+          "path": "$APPCONFIG/edi"
+        }
+      ]
+    },
+    {
+      "identifier": "fs:allow-exists",
+      "allow": [
+        {
+          "path": "$APPCONFIG/edi/knowledge.json"
+        }
+      ]
+    },
+    {
+      "identifier": "fs:allow-read-text-file",
+      "allow": [
+        {
+          "path": "$APPCONFIG/edi/knowledge.json"
+        }
+      ]
+    },
+    {
+      "identifier": "fs:allow-write-text-file",
+      "allow": [
+        {
+          "path": "$APPCONFIG/edi/knowledge.json"
+        }
+      ]
+    }
   ]
 }
